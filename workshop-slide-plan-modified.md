@@ -1,6 +1,6 @@
 # Workshop Slide Plan - Agentic DataViz
 
-**Created:** 2026-06-24  
+**Created:** 2026-06-24
 **Purpose:** planning document for the workshop deck. This is not the final PPT; it is the content spine, source-selection memo, and slide-by-slide markdown plan.
 
 ## About me section
@@ -9,7 +9,7 @@ Add this near the top of the deck, immediately after the title / room setup, bef
 
 ### Suggested slide: About me
 
-**the facilitator**  
+**the facilitator**
 Fractional Data & AI Consultant · Bangalore
 
 Relevant anchors:
@@ -57,21 +57,21 @@ Transition line:
 
 ### Canonical
 
-1. `workshop_outline.md`  
+1. `workshop_outline.md`
    Use as the primary arc: failure → framework → improved chart → production system.
 
-2. `scientific-process-data-visualization.md`  
+2. `scientific-process-data-visualization.md`
    Must be included as the conceptual heart. The workshop should explicitly teach: chart = visual experiment.
 
 ### Must also go in
 
-1. `workshop-overall-framework.md`  
+1. `workshop-overall-framework.md`
    Best current version of the hands-on, participant-led 3-hour flow.
 
-2. `workshop-content-focus.md`  
+2. `workshop-content-focus.md`
    Best concise teaching thesis: story before chart, no-insight option, taste as reusable instructions, critique loop, production workflow.
 
-3. `participant-kit/*.md`  
+3. `participant-kit/*.md`
    These become activity slides and copy-paste artifacts:
    - `context.md`
    - `taste.md`
@@ -80,24 +80,24 @@ Transition line:
    - `chart_review_checklist.md`
    - `next_run.md`
 
-4. `ai-first-slide-format-learnings.md` and `facilitator/ai-first-workshop-learnings.md`  
+4. `ai-first-slide-format-learnings.md` and `facilitator/ai-first-workshop-learnings.md`
    Use for deck format, not content doctrine: slides as operating system, prompts in slides, QR/shared sheet, live failure, high-agency room.
 
-5. `dataviz-critique-learnings.md`  
+5. `dataviz-critique-learnings.md`
    Include Question–Data–Visual trifecta as the simplest review frame. This sits nicely beside scientific-process thinking.
 
-6. `facilitator/literature-survey-synthesis.md`  
+6. `facilitator/literature-survey-synthesis.md`
    Include lightly: architecture problem, not prompt trick; separate transformation from visualization; first chart is draft; reproducibility is structural.
 
-7. `demos/demo-build-list.md` and `talk-prep-source-inventory.md`  
+7. `demos/demo-build-list.md` and `talk-prep-source-inventory.md`
    Use for demo choices: default chart slop, weather judgement example, optional Babbage-style metric monitor.
 
-8. `facilitator-visual-style.md`  
+8. `facilitator-visual-style.md`
    Use for personal philosophy lines: clarity, intentional design, data literacy, narrative, systems thinking.
 
 ### Existing draft to mine, not treat as canonical
 
-- `slides/agentic-dataviz-workshop.md`  
+- `slides/agentic-dataviz-workshop.md`
   Already has a useful Marp-style sequence and prompt blocks. Reuse many prompt slides, but add the scientific-process section more explicitly.
 
 ## What should not dominate
@@ -143,8 +143,8 @@ Target: 28–34 content slides for a 3-hour workshop. Many slides are activity/p
 
 ### Slide 1 - Title
 
-**Agentic DataViz**  
-**Build Systems, Not Charts**  
+**Agentic DataViz**
+**Build Systems, Not Charts**
 Find the story. Teach the agent. Run it again.
 
 Needs:
@@ -818,19 +818,19 @@ Participant output:
 
 # Open decisions
 
-1. Should the final deck be 25 tighter slides or 37 operational slides?  
+1. Should the final deck be 25 tighter slides or 37 operational slides?
    Recommendation: keep 30+ because many are prompt/activity slides, not lecture slides.
 
-2. What fallback dataset?  
+2. What fallback dataset?
    Recommendation: synthetic monthly metric data with segment break + denominator trap + outlier.
 
-3. How much weather example?  
+3. How much weather example?
    Recommendation: one compact demo or backup example, not a long detour.
 
-4. Should we use Marp first?  
+4. Should we use Marp first?
    Recommendation: yes. Use markdown as canonical; PPT can come later.
 
-5. Need citations?  
+5. Need citations?
    Recommendation: cite only stable anchors if final public deck mentions external research. Internal teaching lines can stand without citation.
 
 ---
@@ -983,4 +983,3 @@ The minimum successful workshop is not “everyone made a final chart.” It is:
 ```text
 context.md + taste.md + chosen claim + visual_brief.md + review checklist
 ```
-
