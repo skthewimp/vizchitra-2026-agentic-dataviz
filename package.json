@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "@marp-team/marp-cli": "^4.4.0"
+  },
+  "scripts": {
+    "slides:html": "marp --theme-set themes/marpessa.css --html slides/agentic-dataviz-workshop.md -o slides/agentic-dataviz-workshop.html",
+    "slides:pdf": "marp --theme-set themes/marpessa.css --pdf slides/agentic-dataviz-workshop.md -o slides/agentic-dataviz-workshop.pdf --browser-path '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'",
+    "slides:pptx": "marp --theme-set themes/marpessa.css --pptx slides/agentic-dataviz-workshop.md -o slides/agentic-dataviz-workshop.pptx --browser-path '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'",
+    "slides:test": "marp --theme-set themes/marpessa.css --html slides/tooling-test.md -o slides/tooling-test.html"
+  }
+}

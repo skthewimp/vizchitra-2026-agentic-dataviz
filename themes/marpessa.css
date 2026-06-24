@@ -1,0 +1,578 @@
+/* @theme marpessa */
+
+@import url("https://cdn.jsdelivr.net/npm/highlightjs@9.16.2/styles/monokai.css");
+
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans");
+:root {
+  font-family: "Fira Sans", sans-serif;
+}
+code {
+  font-family: "Fira Mono", monospace;
+}
+
+/* Global reset. Ensures padding/borders don’t increase element width/height. */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* ==================== BASE STYLES ==================== */
+
+/* Default: Mocha Warmth - warm professional neutrals */
+section {
+  --bg: #f5f1ed;
+  --fg: #3d3935;
+  --muted: #8a7d73;
+  --border: #ccc0b3;
+  --heading: #8b6f47;
+  --heading-secondary: #6b5d52;
+  --accent: #b17a50;
+  --link: #b17a50;
+  --link-hover: #8b6f47;
+  --code-bg: #1f1b17;
+  --code-fg: #f7f1e8;
+  --quote-bg: #f9f5f1;
+  --quote-border: #d4a574;
+  --table-header-bg: #d4a574;
+  --table-header-fg: #ffffff;
+  --table-row-stripe: #faf7f4;
+  --mark-bg: #f9e5c8;
+
+  --x-padding: 30px;
+  --y-padding: 5px;
+  --column-x-padding: 20px;
+  --small-0: 92.5%;
+  --small-1: 85.6%;
+  --small-2: 79.1%;
+  --small-3: 72.2%;
+}
+
+/* Sets slide size, spacing, base typography and tries to position content. */
+section {
+  width: 1280px;
+  height: 720px;
+  padding: 30px var(--x-padding);
+
+  position: relative;
+
+  background: var(--bg);
+  color: var(--fg);
+  font-size: 28px;
+  line-height: 1.5;
+
+  place-content: start;
+}
+
+/* Style and position page number, header and footer */
+section::after,
+header,
+footer {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  font-size: var(--small-1);
+  color: var(--muted);
+}
+
+section::after {
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  padding: var(--y-padding) var(--x-padding);
+}
+
+header, footer {
+  width: 100%;
+  left: 0;
+}
+
+header {
+  top: 0;
+}
+
+footer {
+  bottom: 0;
+}
+
+/* Muted text for less important content like captions and footnotes. */
+small, figcaption, .footnote {
+  color: var(--muted);
+  font-size: 0.85em;
+}
+
+/* Headings: Establish a clear hierarchy with accent underlines for H1. */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0.6em;
+  margin-bottom: 0em;
+  line-height: 1.2;
+}
+
+h1, h2 {
+  color: var(--heading);
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2em;
+  border-bottom: 3px solid var(--accent);
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3, h4, h5, h6 {
+  color: var(--heading-secondary);
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 1.25em;
+}
+h4 {
+  font-size: 1.1em;
+}
+h5, h6 {
+  font-size: 1em;
+}
+
+h1 strong,
+h2 strong,
+h3 strong,
+h4 strong,
+h5 strong,
+h6 strong {
+  color: var(--heading-secondary);
+}
+
+/* Links. Brand-colored links with a 2px bottom rule and hover color. */
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.15em;
+  text-decoration-color: var(--accent);
+}
+
+a:hover {
+  color: var(--link-hover);
+  text-decoration-color: var(--link-hover);
+}
+
+/* Emphasis */
+strong, b {
+  font-weight: 700;
+}
+
+em, i {
+  font-style: italic;
+}
+
+mark {
+  background: var(--mark-bg);
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: inherit;
+}
+
+/* Tokenized inline code chips; dark, scrollable code blocks with accent rule. */
+code:not(pre code) {
+  background: var(--code-bg);
+  color: var(--code-fg);
+  padding: 0.1em 0.35em;
+  border-radius: 0.25rem;
+  font-size: 0.9em;
+}
+
+pre {
+  background: var(--code-bg);
+  border-left: 4px solid var(--accent);
+  padding: 15px;
+  border-radius: 5px;
+  max-height: calc(100vh - 375px);
+  overflow: auto;
+  tab-size: 2;
+  /* Prevent layout shift when code scrollbars appear */
+  scrollbar-gutter: stable;
+}
+
+pre code {
+  background: transparent;
+  color: var(--code-fg);
+  padding: 0;
+}
+
+/* Blockquotes: Callout panel with colored rule for emphasis. */
+blockquote {
+  background: var(--quote-bg);
+  border-left: 0.32rem solid var(--quote-border);
+  padding: 0 1rem;
+  font-style: italic;
+  margin: 1em 0;
+}
+
+/* Lists. Tidy list spacing and muted bullets/numbers. */
+ul, ol {
+  margin: 0.5em 0;
+  padding-left: 1.5em;
+}
+
+ul li::marker, ol li::marker {
+  color: var(--muted);
+}
+
+li {
+  margin: 0.3em 0;
+}
+
+/* Improve readability of nested lists */
+li > ul, li > ol {
+  margin-top: 0.3em;
+}
+
+/* Horizontal Rule */
+hr {
+  border: none;
+  border-top: 2px solid var(--accent);
+  margin: 1.5em 0;
+}
+
+/* Tables. Full-width tables with zebra striping and colored header row. */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1em 0;
+}
+
+table thead th {
+  background: var(--table-header-bg);
+  color: var(--table-header-fg);
+  padding: 10px;
+  text-align: left;
+  border: 1px solid var(--border);
+  font-weight: 600;
+}
+
+table td {
+  border: 1px solid var(--border);
+  padding: 8px;
+}
+
+tbody tr:nth-child(odd) td {
+  background: var(--table-row-stripe);
+}
+
+/* Prevent long tokens from overflowing */
+td, th {
+  word-break: break-word;
+}
+
+/* ==================== LAYOUTS ==================== */
+
+/* Columns: heading on top, rest split equally in one row */
+header, footer, section.columns, .columns, .columns-justify {
+  display: flex;
+  flex-wrap: wrap; /* lets the first row be just headers */
+  align-items: stretch;
+  min-height: 0; /* (Nice to have) Constrain very tall content */
+}
+
+/* Any heading spans full width at the top (in document order) */
+section.columns > :is(h1, h2, h3, h4, h5, h6),
+.columns > :is(h1, h2, h3, h4, h5, h6),
+.columns-justify > :is(h1, h2, h3, h4, h5, h6) {
+  flex: 0 0 100%;
+}
+
+/* Hack to prevent margin collapse due to rounding */
+section.columns {
+  column-gap: var(--col-gap, 24px);
+}
+
+/* All other direct children become equal-width columns */
+header > *,
+footer > *,
+section.columns > :not(:is(h1, h2, h3, h4, h5, h6)),
+.columns > :not(:is(h1, h2, h3, h4, h5, h6)),
+.columns-justify > :not(:is(h1, h2, h3, h4, h5, h6)) {
+  flex: 1 1 0; /* equal widths */
+  min-width: 0; /* prevent overflow */
+}
+
+header > *,
+footer > *,
+section.columns > *,
+.columns > *,
+.columns-justify > * {
+  min-height: 0;
+}
+
+header > *, footer > *, .columns > *, .columns-justify > * {
+  padding: var(--y-padding) var(--column-x-padding);
+  margin: 0;
+}
+
+/* header, footer and the utility .columns-justify evenly split child columns.
+  Contents of the first and last children are left and right aligned.
+  Rest are centered. */
+header, footer, .columns-justify {
+  > * {
+    display: flex; /* center content inside each cell */
+    justify-content: center; /* default: centered */
+    text-align: center;
+  }
+  > :first-child {
+    justify-content: flex-start;
+    text-align: start;
+  }
+  > :last-child {
+    justify-content: flex-end;
+    text-align: end;
+  }
+  > :only-child {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+section.title {
+  place-content: center;
+}
+
+.small, section.small > :not(:is(h1, h2, h3, h4, h5, h6)) {
+  font-size: var(--small-0);
+}
+.small-1, section.small-1 > :not(:is(h1, h2, h3, h4, h5, h6)) {
+  font-size: var(--small-1);
+}
+.small-2, section.small-2 > :not(:is(h1, h2, h3, h4, h5, h6)) {
+  font-size: var(--small-2);
+}
+.small-3, section.small-3 > :not(:is(h1, h2, h3, h4, h5, h6)) {
+  font-size: var(--small-3);
+}
+
+transcript {
+  display: none;
+}
+
+/* ==================== THEME OVERLAYS ==================== */
+
+/* Seafoam Clarity - Fresh aqua-green for tech/wellness */
+section.theme-seafoam {
+  --bg: #f8fafb;
+  --fg: #2c3e50;
+  --muted: #6b7f8f;
+  --border: #d0e7e3;
+  --heading: #1a9a8e;
+  --heading-secondary: #3d7a72;
+  --accent: #1a9a8e;
+  --link: #1a9a8e;
+  --link-hover: #156f66;
+  --code-bg: #0f2f2c; /* deep teal */
+  --code-fg: #e6fffb; /* aqua-tinted light */
+  --quote-bg: #f0f9f7;
+  --quote-border: #93e9be;
+  --table-header-bg: #1a9a8e;
+  --table-row-stripe: #f5fbfa;
+  --mark-bg: #d4f5ed;
+}
+
+/* Butter Optimism - Sunny yellows for creative energy */
+section.theme-butter {
+  --bg: #fffef7;
+  --fg: #3a3428;
+  --muted: #8c7a5a;
+  --border: #f5e8c7;
+  --heading: #d9a021;
+  --heading-secondary: #8c7035;
+  --accent: #d9a021;
+  --link: #d9a021;
+  --link-hover: #b08318;
+  --code-bg: #1f1a12; /* warm near-black */
+  --code-fg: #fff3bf; /* buttery light */
+  --quote-bg: #fffdf2;
+  --quote-border: #f9d776;
+  --table-header-bg: #d9a021;
+  --table-row-stripe: #fffef9;
+  --mark-bg: #fff8dc;
+}
+
+/* Clementine Breeze - Peachy warmth for lifestyle brands */
+section.theme-clementine {
+  --bg: #fdfbf7;
+  --fg: #3f3833;
+  --muted: #9a7d68;
+  --border: #f5d9c9;
+  --heading: #e67e50;
+  --heading-secondary: #a36849;
+  --accent: #e67e50;
+  --link: #e67e50;
+  --link-hover: #c85e36;
+  --code-bg: #241712; /* dark roasted peach */
+  --code-fg: #ffe6d5; /* peach-cream */
+  --quote-bg: #fef9f5;
+  --quote-border: #f5a97f;
+  --table-header-bg: #e67e50;
+  --table-row-stripe: #fefcfa;
+  --mark-bg: #fff0e6;
+}
+
+/* Tailwind Slate + Indigo - Modern professional classic */
+section.theme-tailwind {
+  --bg: #f8fafc;
+  --fg: #0f172a;
+  --muted: #475569;
+  --border: #e2e8f0;
+  --heading: #0f172a;
+  --heading-secondary: #334155;
+  --accent: #4f46e5;
+  --link: #4f46e5;
+  --link-hover: #4338ca;
+  --code-bg: #0f172a; /* slate-900 */
+  --code-fg: #e5e7eb; /* slate-200 */
+  --quote-bg: #eef2ff;
+  --quote-border: #a5b4fc;
+  --table-header-bg: #4f46e5;
+  --table-row-stripe: #f8fafc;
+  --mark-bg: #fef3c7;
+}
+
+/* Open Color Teal - Clean and accessible */
+section.theme-opencolor {
+  --bg: #f8f9fa;
+  --fg: #212529;
+  --muted: #868e96;
+  --border: #dee2e6;
+  --heading: #212529;
+  --heading-secondary: #495057;
+  --accent: #12b886;
+  --link: #12b886;
+  --link-hover: #0ca678;
+  --code-bg: #212529; /* gray-9 */
+  --code-fg: #f1f3f5; /* gray-1 */
+  --quote-bg: #e6fcf5;
+  --quote-border: #63e6be;
+  --table-header-bg: #12b886;
+  --table-row-stripe: #f8f9fa;
+  --mark-bg: #fff3bf;
+}
+
+/* Bootstrap Classic - Familiar and reliable */
+section.theme-bootstrap {
+  --bg: #ffffff;
+  --fg: #212529;
+  --muted: #6c757d;
+  --border: #dee2e6;
+  --heading: #212529;
+  --heading-secondary: #495057;
+  --accent: #0d6efd;
+  --link: #0d6efd;
+  --link-hover: #0a58ca;
+  --code-bg: #212529; /* bootstrap body-emphasis */
+  --code-fg: #f8f9fa; /* gray-100 */
+  --quote-bg: #fff9e6;
+  --quote-border: #ced4da;
+  --table-header-bg: #0d6efd;
+  --table-row-stripe: #ffffff;
+  --mark-bg: #fff3cd;
+}
+
+/* Atlassian - Corporate blue sophistication */
+section.theme-atlassian {
+  --bg: #fafbfc;
+  --fg: #172b4d;
+  --muted: #5e6c84;
+  --border: #dfe1e6;
+  --heading: #091e42;
+  --heading-secondary: #253858;
+  --accent: #0052cc;
+  --link: #0052cc;
+  --link-hover: #4c9aff;
+  --code-bg: #091e42; /* N900 */
+  --code-fg: #f4f5f7; /* N20 */
+  --quote-bg: #deebff;
+  --quote-border: #4c9aff;
+  --table-header-bg: #0052cc;
+  --table-row-stripe: #fafbfc;
+  --mark-bg: #fff0b3;
+}
+
+/* Midnight Professional - Elegant dark with teal */
+section.theme-midnight {
+  --bg: #1a1d29;
+  --fg: #e8eaed;
+  --muted: #9ca3af;
+  --border: #454c5e;
+  --heading: #6fe5c7;
+  --heading-secondary: #a0e8d8;
+  --accent: #5fc9b0;
+  --link: #6fe5c7;
+  --link-hover: #8ffad9;
+  --code-bg: #2a2f3f;
+  --code-fg: #a0f5e0;
+  --quote-bg: #23283a;
+  --quote-border: #5fc9b0;
+  --table-header-bg: #5fc9b0;
+  --table-row-stripe: #1f222e;
+  --mark-bg: #3a6b5f;
+}
+
+/* Burgundy Luxe - Rich dark elegance */
+section.theme-burgundy {
+  --bg: #1f1721;
+  --fg: #f5ebf2;
+  --muted: #b8a3b0;
+  --border: #524050;
+  --heading: #ff8cb0;
+  --heading-secondary: #e8a3ba;
+  --accent: #e6819e;
+  --link: #ff8cb0;
+  --link-hover: #ffacc8;
+  --code-bg: #2d242f;
+  --code-fg: #ffb3d1;
+  --quote-bg: #29212d;
+  --quote-border: #e6819e;
+  --table-header-bg: #c75580;
+  --table-row-stripe: #251d28;
+  --mark-bg: #5c3548;
+}
+
+/* Nord Dark - Arctic minimalism */
+section.theme-nord {
+  --bg: #2e3440;
+  --fg: #eceff4;
+  --muted: #d8dee9;
+  --border: #434c5e;
+  --heading: #8fbcbb;
+  --heading-secondary: #88c0d0;
+  --accent: #88c0d0;
+  --link: #88c0d0;
+  --link-hover: #8fbcbb;
+  --code-bg: #3b4252;
+  --code-fg: #eceff4;
+  --quote-bg: #3b4252;
+  --quote-border: #88c0d0;
+  --table-header-bg: #5e81ac;
+  --table-row-stripe: #3b4252;
+  --mark-bg: #ebcb8b;
+}
+
+/* Solarized Dark - Classic terminal aesthetic */
+section.theme-solarized {
+  --bg: #002b36;
+  --fg: #93a1a1;
+  --muted: #657b83;
+  --border: #073642;
+  --heading: #eee8d5;
+  --heading-secondary: #93a1a1;
+  --accent: #268bd2;
+  --link: #268bd2;
+  --link-hover: #2aa198;
+  --code-bg: #073642;
+  --code-fg: #93a1a1;
+  --quote-bg: #073642;
+  --quote-border: #b58900;
+  --table-header-bg: #268bd2;
+  --table-row-stripe: #002b36;
+  --mark-bg: #b58900;
+}
