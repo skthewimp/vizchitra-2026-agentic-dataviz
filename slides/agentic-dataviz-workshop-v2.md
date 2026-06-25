@@ -23,9 +23,9 @@ style: |
 
 ## Build Systems, Not Charts
 
-A chart is one output.
+AI gets you to **a graph**.
 
-The useful thing is the process that can make a better chart next time.
+This workshop is about getting to **my graph** - reliably, reviewably, and again next month.
 
 VizChitra 2026 · 3-hour workshop
 
@@ -34,13 +34,13 @@ VizChitra 2026 · 3-hour workshop
 
 # Today
 
-1. What makes a visualisation work?
+1. Look at what makes charts work
 2. Make the quick-and-dirty AI chart
 3. Pick apart what went wrong
-4. Treat the chart as a claim, not decoration
+4. Treat the chart as a claim with evidence
 5. Make it narrative and opinionated
 6. Build a repeatable workflow
-7. Package what you learnt
+7. Package your taste, context, and review rules
 
 ---
 <!-- footer: "0:00–0:15 · opening" -->
@@ -65,9 +65,14 @@ VizChitra 2026 · 3-hour workshop
 - your LLM / coding tool
 - this deck
 - WhatsApp group
+- participant-kit files
+
+Tool does not matter much today.
+
+Claude, ChatGPT, Copilot, Tableau, Power BI - implementation surfaces, not the method.
 
 ---
-<!-- footer: "0:15–0:40 · good/bad critique" -->
+<!-- footer: "0:15–0:40 · taste + critique" -->
 
 # What makes a visualisation work?
 
@@ -80,7 +85,7 @@ VizChitra 2026 · 3-hour workshop
 Note: Cmd+Tab to WhatsApp. Pick a few examples. Ask the room what they think. Maybe use StreamAlive if useful.
 
 ---
-<!-- footer: "0:15–0:40 · good/bad critique" -->
+<!-- footer: "0:15–0:40 · taste + critique" -->
 
 # What did the room notice?
 
@@ -93,17 +98,32 @@ Look for:
 - what got overpraised because it looked nice
 - what looked ugly but answered the question
 - what was misleading without technically being wrong
+- what felt like personal taste vs analytical integrity
 
 ---
-<!-- footer: "0:40–1:10 · first AI chart + context" -->
+<!-- footer: "0:40–1:10 · context + first AI chart" -->
+
+# LLMs are not magic
+
+Before asking for a chart, we need to know:
+
+- what data we have
+- who the reader is
+- what question we are asking
+- what story might be true
+- why anyone should care
+- what the agent must refuse to overclaim
+
+No context, no chart. Only decoration.
+
+---
+<!-- footer: "0:40–1:10 · context + first AI chart" -->
 
 # Let's start badly
 
 Upload your dataset to your LLM and paste this:
 
 ```text
-I have uploaded a dataset.
-
 My question is: [paste your question here]
 
 Make one chart that answers this question.
@@ -116,7 +136,7 @@ If you need to make assumptions, state them briefly.
 Save the first output. Don't fix it yet.
 
 ---
-<!-- footer: "0:40–1:10 · first AI chart + context" -->
+<!-- footer: "0:40–1:10 · context + first AI chart" -->
 
 # Send the first chart to WhatsApp
 
@@ -127,7 +147,7 @@ Let other people react to the chart before you defend it.
 Note: review a few. Ask people to comment in the group. Capture recurring failures.
 
 ---
-<!-- footer: "0:40–1:10 · first AI chart + context" -->
+<!-- footer: "0:40–1:10 · context + first AI chart" -->
 
 # What usually goes wrong?
 
@@ -143,21 +163,7 @@ Likely suspects:
 - title describes the data, not the point
 - visual form looks plausible but tests nothing
 - caveat is hidden in prose nobody reads
-
----
-<!-- footer: "0:40–1:10 · first AI chart + context" -->
-
-# LLMs are not magic
-
-Before asking for a chart, we need to know:
-
-- what data we have
-- who the reader is
-- what question we are asking
-- what story might be true
-- why anyone should care
-
-No story, no chart. Only decoration.
+- chart ignores the taste rules it was given
 
 ---
 <!-- footer: "1:10–1:35 · story before chart" -->
@@ -246,6 +252,26 @@ If you cannot state the hypothesis, you probably don't yet know what to draw.
 ---
 <!-- footer: "1:10–1:35 · story before chart" -->
 
+# A good AI analyst can say no
+
+Do not ask only:
+
+```text
+Find me an insight.
+```
+
+Ask:
+
+```text
+Tell me what, if anything, the data can honestly support.
+Also tell me if there is no meaningful chart here.
+```
+
+Sometimes the best output is: no chart, no claim, collect better data.
+
+---
+<!-- footer: "1:10–1:35 · story before chart" -->
+
 # Treat the data as evidence
 
 Before choosing the chart, inspect the evidence.
@@ -259,9 +285,7 @@ Ask:
 - what is the fair comparison?
 - is this a count, rate, share, index, or rank?
 
-Many bad charts are not design failures.
-
-They are evidence failures.
+Many bad charts are evidence failures wearing nice clothes.
 
 ---
 <!-- footer: "1:10–1:35 · story before chart" -->
@@ -278,8 +302,7 @@ Different claims need different tests:
 - actual vs target → bullet / range chart
 - before vs after → slopegraph or indexed line
 
-This is just my way of visualisation. Yours might vary.
-You build your own visual language
+This is one visual language. Yours can vary, but make it explicit.
 
 ---
 <!-- footer: "1:10–1:35 · story before chart" -->
@@ -301,15 +324,40 @@ A chart without context is an experiment without controls.
 ---
 <!-- footer: "1:10–1:35 · story before chart" -->
 
+# Prompt: possible stories
+
+```text
+Inspect the data using my context and taste rules.
+Do not make a chart yet.
+
+Return 5 possible stories. For each:
+- claim
+- evidence and exact columns
+- comparison/baseline
+- alternative explanation
+- confidence
+- overclaim risk
+- recommended chart only if useful
+
+Include one null/no-insight finding.
+Rank the options and recommend one.
+```
+
+---
+<!-- footer: "1:10–1:35 · story before chart" -->
+
 # What needs to survive scrutiny?
 
-For your chart, write down:
+For your chosen story, write down:
 
 - claim
 - evidence
 - comparison
 - caveat
+- strongest argument against it
 - easiest way to misread it
+
+If this list feels weak, the chart will be weak.
 
 ---
 <!-- footer: "1:45–2:15 · visual brief" -->
@@ -337,24 +385,45 @@ It should have:
 ---
 <!-- footer: "1:45–2:15 · visual brief" -->
 
+# Prompt: visual brief
+
+```text
+Turn the chosen story into a visual brief.
+
+Include:
+- main claim
+- audience
+- evidence columns
+- filters / aggregation
+- comparison baseline
+- chart form and why
+- labels / annotations / colours
+- source and caveat text
+- what not to show
+- acceptance criteria
+```
+
+This is the chart request form.
+
+---
+<!-- footer: "1:45–2:15 · visual brief" -->
+
 # Build the workflow
 
 The rough sequence:
 
-1. import / clean data
-2. understand the rows and columns
-3. write candidate hypotheses
-4. check which ones survive
-5. pick the main story
-6. choose the visual form
-7. specify labels, colour, and annotation
+1. build `taste.md`
+2. build `context.md`
+3. profile data and definitions
+4. write candidate hypotheses
+5. check which ones survive
+6. pick the main story
+7. write the visual brief
 8. make the chart
 9. critique it
-10. revise once or twice
+10. save next-run notes
 
-The model can help with the middle bits.
-
-The judgment is still yours.
+The model can help. Judgment stays yours.
 
 ---
 <!-- footer: "1:45–2:15 · visual brief" -->
@@ -369,49 +438,9 @@ Give the model small jobs:
 - draft labels and annotations
 - check the visual choice
 - list ways the chart could mislead
+- write the next-run recipe
 
 Do not outsource taste or judgment.
-
----
-<!-- footer: "1:45–2:15 · visual brief" -->
-
-# Prompt: possible stories
-
-```text
-Inspect the data using my context.
-Do not make a chart yet.
-
-Return 5 possible stories.
-For each one, give:
-- claim
-- evidence
-- comparison
-- chart form
-- confidence
-- misleading risk
-
-Rank them and recommend one to visualise.
-```
-
----
-<!-- footer: "1:45–2:15 · visual brief" -->
-
-# Prompt: visual brief
-
-```text
-Turn the chosen story into a visual brief.
-
-Include:
-- main claim
-- audience
-- evidence columns
-- filters / aggregation
-- comparison baseline
-- chart form
-- labels / annotations / colours
-- caveats
-- acceptance criteria
-```
 
 ---
 <!-- footer: "2:15–2:40 · generate first chart" -->
@@ -428,7 +457,25 @@ Rules:
 - direct labels where possible
 - no causal language unless the evidence supports it
 - include source and caveat
+- explain transformations before plotting
 ```
+
+---
+<!-- footer: "2:40–2:55 · critique + revise" -->
+
+# Default slop hunt
+
+Look for:
+
+- legend when direct labels would work
+- generic title
+- no baseline
+- wrong denominator
+- fake precision
+- colour doing no work
+- annotation missing from the key point
+- caveat separated from the claim
+- chart prettier than it is true
 
 ---
 <!-- footer: "2:40–2:55 · critique + revise" -->
@@ -444,6 +491,8 @@ Check:
 - misleading readings
 - taste-rule violations
 - missing caveats
+- unsupported story
+- whether no chart would be more honest
 
 Then propose one revision.
 ```
@@ -479,6 +528,92 @@ It means someone has decided:
 - when it refreshes
 - when a human must intervene
 
+Trust the workflow, not the first chart.
+
+---
+<!-- footer: "2:55–3:00 · package + close" -->
+
+# What can AI safely do?
+
+Good use cases:
+
+- first-pass charts from clean data
+- turning style guides into rules
+- suggesting story angles and chart forms
+- drafting chart code/specs
+- checking against house style
+
+Risky use cases:
+
+- ambiguous denominators or definitions
+- unsupported causal/policy claims
+- messy undocumented data
+- fully automated publishing without QA
+
+---
+<!-- footer: "2:55–3:00 · package + close" -->
+
+# Now turn taste into rules
+
+Taste becomes useful only when it becomes instructions.
+
+Bad instruction:
+
+```text
+Make it beautiful and professional.
+```
+
+Better instruction:
+
+```text
+Use direct labels instead of legends.
+Use grey for context and one accent colour for the focal series.
+Title should state the point, not describe the data.
+Show the comparison baseline.
+Do not use 3D, rainbow palettes, or unsupported causal language.
+```
+
+---
+<!-- footer: "2:55–3:00 · package + close" -->
+
+# Prompt: extract my taste
+
+```text
+Look at today’s good/bad chart examples and my chart revisions.
+Turn my preferences into reusable chart rules.
+
+Return:
+- positive rules to repeat
+- anti-patterns to ban
+- colour and label preferences
+- annotation preferences
+- chart types to avoid
+- analytical integrity rules
+- one rule that may depend on audience/context
+```
+
+Save this as `taste.md`.
+
+---
+<!-- footer: "2:55–3:00 · package + close" -->
+
+# Prompt: context pack
+
+```text
+Turn today’s dataset notes into a reusable context pack.
+
+Include:
+- audience and decision/use case
+- one-row grain
+- important metrics and denominators
+- known caveats and missing data
+- fair comparisons
+- likely misuse or overclaim risk
+- what makes future charts useful
+```
+
+Save this as `context.md`.
+
 ---
 <!-- footer: "2:55–3:00 · package + close" -->
 
@@ -491,7 +626,9 @@ If 50 people used this next month, what should be:
 - reviewed?
 - escalated?
 
-That is where the agent actually begins.
+The scalable AI win is not fancy charts.
+
+It is making boring charts consistently good, on-brand, and reviewable.
 
 ---
 <!-- footer: "2:55–3:00 · package + close" -->
@@ -524,6 +661,8 @@ Show:
 2. what failed
 3. revised brief or chart
 4. one rule you would reuse
+
+If you did not get a good chart, share the rule anyway.
 
 ---
 <!-- footer: "2:55–3:00 · package + close" -->
