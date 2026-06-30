@@ -10,7 +10,7 @@ Read first:
 
 ## Build order
 
-1. `karthik-analysis-planner`
+1. `karthik-analysis-planner` ✅
 2. `karthik-hypothesis-generator`
 3. `karthik-evidence-builder`
 4. `karthik-claim-validator`
@@ -32,7 +32,7 @@ Keep the skill practical and test it on the 4pm Bangalore rain question.
 
 ### 1. `karthik-analysis-planner`
 
-Status: TODO
+Status: DONE — built at `/Users/Karthik/.codex/skills/karthik-analysis-planner/` and validated on 2026-06-30
 
 Purpose: turn natural-language question into analysis contract.
 
