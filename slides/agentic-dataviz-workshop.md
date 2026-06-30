@@ -535,3 +535,215 @@ AI makes chart-making cheap.
 Judgment makes charts worth looking at.
 
 # story + evidence + taste + review
+
+---
+<!-- _class: lead -->
+<!-- footer: "below the line · deck revision notes" -->
+
+# BELOW THE LINE
+
+## Changes to make before final deck
+
+These slides are planning notes, not workshop slides yet.
+
+---
+<!-- footer: "below the line · deck revision notes" -->
+
+# Main deck problem
+
+The title says:
+
+> Build Systems, Not Charts
+
+But the current flow still feels too much like:
+
+> make one chart → critique it → improve it
+
+Need make the **system-building arc** visible much earlier.
+
+---
+<!-- footer: "below the line · deck revision notes" -->
+
+# New opening move
+
+Add an early end-to-end demo:
+
+```text
+raw data
+→ question
+→ data profile
+→ candidate stories
+→ validated claim
+→ visual brief
+→ chart
+→ critique
+→ revision
+→ saved reusable rules
+```
+
+Show the destination first. Then teach the pieces.
+
+---
+<!-- footer: "below the line · deck revision notes" -->
+
+# Reframe “Today”
+
+Current agenda is chart-first.
+
+New agenda should be system-first:
+
+1. See a complete agentic dataviz workflow
+2. Generate a bad first chart
+3. Critique it with humans + LLM
+4. Turn critique into reusable rules
+5. Build story + evidence + visual brief
+6. Generate and revise
+7. Package your own mini-system
+
+---
+<!-- footer: "below the line · deck revision notes" -->
+
+# Add key thesis slide
+
+# AI makes generation cheap
+
+The hard part is no longer:
+
+> Can I make a chart?
+
+The hard part is:
+
+> Is this the right chart, from the right data, for the right claim?
+
+Validation becomes the scarce skill.
+
+---
+<!-- footer: "below the line · deck revision notes" -->
+
+# Strengthen peer critique
+
+Change exercise from only “review your own AI chart” to:
+
+1. person A submits chart
+2. others critique it
+3. LLM critiques it
+4. compare the two
+5. save reusable rules
+
+This creates live training data for taste + review skills.
+
+---
+<!-- footer: "below the line · deck revision notes" -->
+
+# Add human vs LLM critique frame
+
+For each reviewed chart, capture:
+
+```text
+Human caught:
+LLM caught:
+Both missed:
+Disagreement:
+Rule to save:
+```
+
+This makes critique visible, not just conversational.
+
+---
+<!-- footer: "below the line · deck revision notes" -->
+
+# Add “your critique becomes your skill”
+
+Participant comments are not throwaway.
+
+Save:
+
+- what they objected to
+- what they praised
+- what they found misleading
+- what they wanted clarified
+- what they would ban next time
+
+This becomes their personal / team chart-review skill.
+
+---
+<!-- footer: "below the line · deck revision notes" -->
+
+# Move “From chart to system” earlier
+
+Current deck introduces production/system thinking near the end.
+
+Need introduce it twice:
+
+1. near the start: what system are we building?
+2. near the end: how do we package what we built?
+
+---
+<!-- footer: "below the line · deck revision notes" -->
+
+# Add light dashboard / BI extension
+
+Not a full section. One slide only.
+
+If this becomes a dashboard:
+
+- same colour means same thing across views
+- filters must be obvious
+- metrics need definitions
+- dashboard needs a reading path
+- every view needs a job
+- auto-generated dashboards are usually junk until reviewed
+
+---
+<!-- footer: "below the line · deck revision notes" -->
+
+# Add seeded backup material
+
+Do not depend on participant preparation.
+
+Need ready before workshop:
+
+- 2 good charts
+- 2 bad charts
+- 2 simple datasets
+- 1 finished end-to-end demo
+- 1 bad first AI chart
+- 1 revised better chart
+- 1 reusable critique skill
+
+---
+<!-- footer: "below the line · deck revision notes" -->
+
+# Likely new deck structure
+
+1. Opening + promise
+2. End-to-end demo system
+3. Why generation is cheap, validation scarce
+4. WhatsApp good/bad critique
+5. First bad AI chart
+6. Peer + LLM critique
+7. Question → hypothesis → evidence
+8. Visual brief
+9. Generate chart
+10. Review + revise
+11. Package workflow / skill
+12. BI/dashboard extension
+13. Share-out + close
+
+---
+<!-- footer: "below the line · deck revision notes" -->
+
+# Work needed before rewriting slides
+
+Do not polish deck yet.
+
+First build:
+
+- clean demo
+- fallback datasets
+- seeded chart examples
+- critique skill
+- participant prep email
+- logistics checklist
+
+Then rewrite slides around actual artefacts.

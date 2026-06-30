@@ -139,10 +139,10 @@ Local sources:
 - `WORK/bangalore-weather/bangalore_weather_update.R`
 - `WORK/bangalore-weather/bangalore_weather_historical.R`
 - `WORK/bangalore-weather/charts/bangalore_weather_2021.png` through `2025.png`
-- `WORK/data work/bangalore/weather/blog-post.md`
-- `WORK/data work/bangalore/weather/blog-post-fewshot-weather.md`
-- `WORK/data work/bangalore/weather/blog-post-wind.md`
-- `WORK/data work/bangalore/weather/weather_chart_common.R`
+- `WORK/data_work/bangalore/weather/blog-post.md`
+- `WORK/data_work/bangalore/weather/blog-post-fewshot-weather.md`
+- `WORK/data_work/bangalore/weather/blog-post-wind.md`
+- `WORK/data_work/bangalore/weather/weather_chart_common.R`
 
 Reusable ideas:
 
@@ -473,10 +473,10 @@ High-value files actually inspected:
 - `WORK/BabbageInsight/weight_exploration.Rmd`
 - `WORK/IIMB/The Art of Data Analysis.pptx`
 - `WORK/takshashila/Data Presentation.pptx`
-- `WORK/data work/bangalore/weather/blog-post.md`
-- `WORK/data work/bangalore/weather/blog-post-fewshot-weather.md`
-- `WORK/data work/bangalore/weather/blog-post-wind.md`
-- `WORK/data work/bangalore/weather/weather_chart_common.R`
+- `WORK/data_work/bangalore/weather/blog-post.md`
+- `WORK/data_work/bangalore/weather/blog-post-fewshot-weather.md`
+- `WORK/data_work/bangalore/weather/blog-post-wind.md`
+- `WORK/data_work/bangalore/weather/weather_chart_common.R`
 - `WORK/bangalore-weather/bangalore_weather_update.R`
 - `WORK/consulting/README.md`
 - `WORK/consulting/consulting-positioning.md`
@@ -491,4 +491,4 @@ High-value files actually inspected:
 - `WORK/vibes/blog-embeddings/noenthuda-substack-html/186508764.why-analytics-is-useful-and-selection.html`
 - `WORK/vibes/blog-embeddings/noenthuda-substack-html/165563513.on-llms-reasoning.html`
 
-Broader scan also found many older talks/decks (`Book/Sequoia Talk.pptx`, `data work/consulting/pitchdeck_v2.pptx`, `IIMB/IIMB Presentation.pdf`, `Mint/`, sports projects, etc.). Most are less directly relevant unless you want extra anecdotes about markets, public data, or data storytelling traps.
+Broader scan also found many older talks/decks (`Book/Sequoia Talk.pptx`, `data_work/consulting/pitchdeck_v2.pptx`, `IIMB/IIMB Presentation.pdf`, `Mint/`, sports projects, etc.). Most are less directly relevant unless you want extra anecdotes about markets, public data, or data storytelling traps.
