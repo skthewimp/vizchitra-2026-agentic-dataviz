@@ -102,7 +102,34 @@ For “does it rain at 4pm?”, it should force:
 
 Output should be an analysis contract, not prose.
 
-### B. `karthik-evidence-builder`
+### B. `karthik-hypothesis-generator`
+
+Purpose: generate testable hypotheses from the question plus data profile.
+
+Not generic brainstorming. Each hypothesis must be analyzable.
+
+For each hypothesis, require:
+
+- claim
+- metric
+- denominator
+- comparison
+- test / calculation
+- likely chart
+- possible confound
+- what would falsify this
+
+Example for 4pm rain:
+
+1. Rain probability peaks in late afternoon.
+2. The 4pm peak is stronger in monsoon months.
+3. Pre-monsoon rain is more evening-skewed than monsoon rain.
+4. Total rainfall and rain probability tell different stories.
+5. Recent years have shifted the hourly rain profile.
+
+This should run after data profiling, before evidence building.
+
+### C. `karthik-evidence-builder`
 
 Purpose: execute the analysis only from data, producing computed facts.
 
@@ -127,7 +154,7 @@ sanity_checks.md
 candidate_claims.md
 ```
 
-### C. `karthik-claim-validator`
+### D. `karthik-claim-validator`
 
 Purpose: decide which candidate claims are actually supported.
 
@@ -144,7 +171,7 @@ Checks:
 
 For weather posts, it should reject vague claims like “Bangalore gets most rain at 4pm” if the metric is actually “probability of measurable rain by hour”.
 
-### D. `weather-blog-system`
+### E. `weather-blog-system`
 
 Purpose: domain-specific skill for `weather.karthiks.co`.
 
@@ -161,7 +188,7 @@ Should know:
 
 This is the strongest way to make the demo feel real and yours.
 
-### E. `computed-facts-to-post`
+### F. `computed-facts-to-post`
 
 Purpose: let LLM write only after facts exist.
 
@@ -176,7 +203,7 @@ Rules:
 
 This can combine with `karthik-writing-style`.
 
-### F. `chart-critique-skill`
+### G. `chart-critique-skill`
 
 Some of this exists in `karthik-data-visualization`, but workshop needs a participant-facing review skill.
 
@@ -194,10 +221,12 @@ This is also the skill participants can adapt using WhatsApp critique comments.
 ## Recommended build order
 
 1. `karthik-analysis-planner`
-2. `karthik-evidence-builder`
-3. `weather-blog-system`
-4. `computed-facts-to-post`
-5. `chart-critique-skill`
+2. `karthik-hypothesis-generator`
+3. `karthik-evidence-builder`
+4. `karthik-claim-validator`
+5. `weather-blog-system`
+6. `computed-facts-to-post`
+7. `chart-critique-skill`
 
 Do not start with writing/chart skills. Existing skills already cover that reasonably well.
 
@@ -206,7 +235,9 @@ Do not start with writing/chart skills. Existing skills already cover that reaso
 ```text
 User question
 → analysis planner creates estimand + denominator + comparison
-→ evidence builder profiles data and computes facts
+→ evidence builder profiles data
+→ hypothesis generator creates testable candidate stories
+→ evidence builder computes facts
 → claim validator ranks supported claims
 → dataviz selector chooses chart form
 → karthik-data-visualization styles chart
